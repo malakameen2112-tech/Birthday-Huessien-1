@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy 21st Birthday, Huessien 🤎</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#160f17;
+    color:#f7eee9;
+    font-family:'Montserrat',sans-serif;
+    overflow-x:hidden;
+}
+
+.grain{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    opacity:.08;
+    z-index:50;
+    background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.35'/%3E%3C/svg%3E");
+}
+
+.floating-hearts{
+    position:fixed;
+    inset:0;
+    pointer-events:none;
+    z-index:5;
+    overflow:hidden;
+}
+
+.floating-hearts span{
+    position:absolute;
+    bottom:-30px;
+    color:#d99a9e;
+    opacity:.45;
+    animation:floatUp linear forwards;
+}
+
+@keyframes floatUp{
+    from{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    15%{
+        opacity:.5;
+    }
+    to{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.music-btn{
+    position:fixed;
+    top:22px;
+    right:20px;
+    z-index:60;
+    border:1px solid rgba(255,255,255,.2);
+    background:rgba(25,15,23,.85);
+    color:#f8e9e4;
+    padding:12px 18px;
+    border-radius:30px;
+    cursor:pointer;
+    backdrop-filter:blur(10px);
+    font-size:12px;
+}
+
+.music-icon{
+    margin-right:7px;
+}
+
+main{
+    position:relative;
+    z-index:2;
+}
+
+section{
+    padding:110px 8%;
+}
+
+.hero{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    position:relative;
+}
+
+.hero-glow{
+    position:absolute;
+    width:500px;
+    height:500px;
+    border-radius:50%;
+    background:rgba(166,89,102,.18);
+    filter:blur(100px);
+}
+
+.eyebrow,
+.section-kicker{
+    color:#c99599;
+    font-size:11px;
+    letter-spacing:4px;
+    text-transform:uppercase;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    position:relative;
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(60px,13vw,125px);
+    line-height:.82;
+    font-weight:600;
+}
+
+.hero h1 span{
+    color:#d99a9e;
+    font-style:italic;
+}
+
+.hero-sub{
+    margin-top:30px;
+    max-width:600px;
+    color:#cdbfc0;
+    line-height:1.8;
+    font-size:14px;
+}
+
+.age{
+    margin-top:35px;
+    font-family:'Cormorant Garamond',serif;
+    font-size:90px;
+    color:#d99a9e;
+    opacity:.8;
+}
+
+.scroll{
+    margin-top:30px;
+    font-size:10px;
+    letter-spacing:3px;
+    color:#9d8d90;
+}
+
+.scroll span{
+    color:#d99a9e;
+    font-size:18px;
+}
+
+.intro{
+    max-width:850px;
+    margin:auto;
+    text-align:center;
+}
+
+h2{
+    font-family:'Cormorant Garamond',serif;
+    font-size:clamp(45px,7vw,78px);
+    line-height:.95;
+    font-weight:600;
+}
+
+h2 em{
+    color:#d99a9e;
+}
+
+.intro p,
+.promise p,
+.final p{
+    max-width:650px;
+    margin:30px auto 0;
+    color:#bbaeb0;
+    line-height:2;
+    font-size:14px;
+}
+
+.gallery{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-heading{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    margin-bottom:45px;
+}
+
+.counter{
+    color:#9d8d90;
+    font-size:12px;
+    letter-spacing:2px;
+}
+
+.photo-grid{
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    grid-auto-rows:180px;
+    gap:15px;
+}
+
+.photo{
+    overflow:hidden;
+    background:#251820;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+.photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+    transition:.7s;
+}
+
+.photo:hover img{
+    transform:scale(1.06);
+}
+
+.p1{
+    grid-column:span 3;
+    grid-row:span 2;
+}
+
+.p2{
+    grid-column:span 3;
+}
+
+.p3{
+    grid-column:span 2;
+}
+
+.p4{
+    grid-column:span 2;
+}
+
+.p5{
+    grid-column:span 2;
+}
+
+.p6{
+    grid-column:span 3;
+}
+
+.p7{
+    grid-column:span 3;
+}
+
+.letter{
+    max-width:950px;
+    margin:auto;
+}
+
+.letter-card{
+    position:relative;
+    background:#21151e;
+    border:1px solid rgba(255,255,255,.1);
+    padding:70px 10%;
+    box-shadow:0 30px 80px rgba(0,0,0,.25);
+}
+
+.seal{
+    width:55px;
+    height:55px;
+    border:1px solid #b77d83;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:27px;
+    color:#d99a9e;
+    margin-bottom:30px;
+}
+
+.letter-card h2{
+    font-size:60px;
+    margin-bottom:35px;
+}
+
+.letter-text p{
+    color:#d1c4c5;
+    font-family:'Cormorant Garamond',serif;
+    font-size:20px;
+    line-height:1.7;
+    margin-bottom:22px;
+}
+
+.signature{
+    margin-top:35px;
+    color:#a99799;
+    font-size:13px;
+}
+
+.signature span{
+    color:#d99a9e;
+}
+
+.promise{
+    text-align:center;
+}
+
+.promise-inner{
+    max-width:850px;
+    margin:auto;
+}
+
+.mini-hearts{
+    margin-top:40px;
+    color:#d99a9e;
+    font-size:25px;
+}
+
+.final{
+    min-height:80vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
+
+.final-orb{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    border:1px solid #a86670;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:'Cormorant Garamond',serif;
+    font-size:50px;
+    color:#d99a9e;
+    margin-bottom:35px;
+    box-shadow:0 0 70px rgba(190,100,110,.15);
+}
+
+.surprise-btn{
+    margin-top:40px;
+    background:#d99a9e;
+    border:0;
+    color:#21151e;
+    padding:16px 28px;
+    border-radius:40px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.surprise-btn:hover{
+    transform:translateY(-3px);
+    box-shadow:0 15px 30px rgba(217,154,158,.2);
+}
+
+.modal{
+    position:fixed;
+    inset:0;
+    z-index:100;
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:25px;
+}
+
+.modal.show{
+    display:flex;
+}
+
+.modal-backdrop{
+    position:absolute;
+    inset:0;
+    background:rgba(5,3,5,.82);
+    backdrop-filter:blur(8px);
+}
+
+.modal-card{
+    position:relative;
+    z-index:2;
+    width:min(600px,100%);
+    background:#21151e;
+    border:1px solid rgba(255,255,255,.12);
+    padding:70px 40px;
+    text-align:center;
+    box-shadow:0 30px 100px rgba(0,0,0,.5);
+}
+
+.close{
+    position:absolute;
+    top:15px;
+    right:20px;
+    background:none;
+    border:0;
+    color:#fff;
+    font-size:30px;
+    cursor:pointer;
+}
+
+.cake{
+    font-size:65px;
+    margin-bottom:25px;
+}
+
+.modal-card h2{
+    font-size:55px;
+}
+
+.modal-card p{
+    margin-top:25px;
+    color:#bbaeb0;
+    line-height:1.8;
+}
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s ease;
+}
+
+.reveal.visible{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:700px){
+
+    section{
+        padding:90px 7%;
+    }
+
+    .music-btn{
+        top:15px;
+        right:15px;
+        padding:10px 13px;
+    }
+
+    .hero h1{
+        font-size:65px;
+    }
+
+    .age{
+        font-size:75px;
+    }
+
+    .section-heading{
+        align-items:flex-start;
+        gap:20px;
+    }
+
+    .photo-grid{
+        grid-template-columns:repeat(2,1fr);
+        grid-auto-rows:180px;
+    }
+
+    .p1,
+    .p2,
+    .p3,
+    .p4,
+    .p5,
+    .p6,
+    .p7{
+        grid-column:span 1;
+        grid-row:span 1;
+    }
+
+    .p1{
+        grid-column:span 2;
+    }
+
+    .letter-card{
+        padding:50px 25px;
+    }
+
+    .letter-card h2{
+        font-size:48px;
+    }
+
+    .letter-text p{
+        font-size:18px;
+    }
+
+    .modal-card h2{
+        font-size:43px;
+    }
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="grain"></div>
+
+<div class="floating-hearts"></div>
+
+<button class="music-btn" id="musicBtn">
+    <span class="music-icon">♫</span>
+    <span id="musicText">Play our song</span>
+</button>
+
+<audio id="song" loop preload="metadata">
+    <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
+
+<main>
+
+<section class="hero">
+
+    <div class="hero-glow"></div>
+
+    <div class="eyebrow">A little birthday surprise</div>
+
+    <h1>
+        Happy Birthday,<br>
+        <span>Huessien</span>
+    </h1>
+
+    <p class="hero-sub">
+        to my favorite human, my love, my fiancé…<br>
+        and my forever person 🥹🤎
+    </p>
+
+    <div class="age">21</div>
+
+    <div class="scroll">
+        SCROLL TO YOUR SURPRISE ↓
+    </div>
+
+</section>
+
+
+<section class="intro reveal">
+
+    <div class="section-kicker">
+        FOR MY FAVORITE HUMAN
+    </div>
+
+    <h2>
+        Twenty-one looks<br>
+        <em>really good</em> on you.
+    </h2>
+
+    <p>
+        Today is all about celebrating you — your smile,
+        your heart, your little details, and every beautiful
+        memory we're going to make together. 🤎
+    </p>
+
+</section>
+
+
+<section class="gallery reveal">
+
+    <div class="section-heading">
+
+        <div>
+            <div class="section-kicker">
+                OUR LITTLE WORLD
+            </div>
+
+            <h2>
+                Memories I’d<br>
+                <em>keep forever.</em>
+            </h2>
+        </div>
+
+        <span class="counter">
+            07 / 07
+        </span>
+
+    </div>
+
+
+    <div class="photo-grid">
+
+        <figure class="photo p1">
+            <img src="assets/photo1.jpg">
+        </figure>
+
+        <figure class="photo p2">
+            <img src="assets/photo2.jpg">
+        </figure>
+
+        <figure class="photo p3">
+            <img src="assets/photo3.jpg">
+        </figure>
+
+        <figure class="photo p4">
+            <img src="assets/photo4.jpg">
+        </figure>
+
+        <figure class="photo p5">
+            <img src="assets/photo5.jpg">
+        </figure>
+
+        <figure class="photo p6">
+            <img src="assets/photo6.jpg">
+        </figure>
+
+        <figure class="photo p7">
+            <img src="assets/photo7.jpg">
+        </figure>
+
+    </div>
+
+</section>
+
+
+<section class="letter reveal">
+
+    <div class="letter-card">
+
+        <div class="seal">H</div>
+
+        <div class="section-kicker">
+            A LETTER FOR YOU
+        </div>
+
+        <h2>
+            Dear Shs albii,
+        </h2>
+
+        <div class="letter-text">
+
+            <p>
+                My favorite human, my love, my fiancé,
+                and my forever person 🥹🤎
+            </p>
+
+            <p>
+                You have no idea how much I love being yours.
+                There’s something about you that makes my heart
+                feel safe, happy, and completely at home. 🥺🤎
+            </p>
+
+            <p>
+                I love your presence, your voice, your little details,
+                your way of caring about me… I literally love everything
+                about you. And honestly, I can’t wait for the day I can
+                call you my husband and annoy you for the rest of our
+                lives 😂🤎😘
+            </p>
+
+            <p>
+                You’re not just my boyfriend or my fiancé…
+                you’re my person. The one I want when I’m happy,
+                when I’m sad, when I’m tired, and even when I’m being
+                annoying for absolutely no reason 😂🥹🤎
+            </p>
+
+            <p>
+                سحس قلبي بتاعي أنااا 🤎😘<br>
+                وبابا سحس حبيب قلبي 🤎😚😘
+            </p>
+
+            <p>
+                My handsome baby, my favorite man,
+                and the one who owns the biggest piece of my heart. 🥹❤️
+            </p>
+
+            <p>
+                I love you more than you know, and I’ll keep choosing you,
+                loving you, and being your biggest supporter every single day. 🤎
+            </p>
+
+            <p>
+                Now come here and give your girl a kiss,
+                بابا سحس 😚😘🤎
+            </p>
+
+        </div>
+
+        <div class="signature">
+            Forever yours, 🤎
+            <span>your girl</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="promise reveal">
+
+    <div class="promise-inner">
+
+        <div class="section-kicker">
+            ONE MORE THING
+        </div>
+
+        <h2>
+            Here’s to this birthday…<br>
+            and <em>every one after it.</em>
+        </h2>
+
+        <p>
+            More laughs. More memories. More random photos.
+            More annoying each other. More kisses.
+            More “I love you”.
+            More us. 🤎
+        </p>
+
+        <div class="mini-hearts">
+            ♡ &nbsp; ♥ &nbsp; ♡
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="final reveal">
+
+    <div class="final-orb">
+        21
+    </div>
+
+    <div class="section-kicker">
+        YOUR DAY. YOUR YEAR. YOUR MOMENT.
+    </div>
+
+    <h2>
+        Happy Birthday<br>
+        <em>my Shs albii.</em> ❤️
+    </h2>
+
+    <p>
+        May 21 be the beginning of another beautiful chapter
+        in your life. 🤎
+    </p>
+
+    <button class="surprise-btn" id="surpriseBtn">
+        One last surprise ✨
+    </button>
+
+</section>
+
+</main>
+
+
+<div class="modal" id="modal">
+
+    <div class="modal-backdrop"></div>
+
+    <div class="modal-card">
+
+        <button class="close" id="closeModal">
+            ×
+        </button>
+
+        <div class="cake">
+            🎂
+        </div>
+
+        <div class="section-kicker">
+            PS...
+        </div>
+
+        <h2>
+            You’re stuck with me.<br>
+            <em>Happy birthday ❤️</em>
+        </h2>
+
+        <p>
+            Now go make a wish — I already made mine. 🥹
+        </p>
+
+    </div>
+
+</div>
+
+
+<script>
+
+const musicBtn = document.getElementById("musicBtn");
+const musicText = document.getElementById("musicText");
+const song = document.getElementById("song");
+
+musicBtn.addEventListener("click", async () => {
+
+    if(song.paused){
+
+        try{
+
+            await song.play();
+
+            musicText.textContent = "Pause our song";
+
+        }catch(error){
+
+            musicText.textContent = "Add song.mp3";
+
+        }
+
+    }else{
+
+        song.pause();
+
+        musicText.textContent = "Play our song";
+
+    }
+
+});
+
+
+const surpriseBtn = document.getElementById("surpriseBtn");
+const modal = document.getElementById("modal");
+const closeModal = document.getElementById("closeModal");
+
+surpriseBtn.addEventListener("click", () => {
+
+    modal.classList.add("show");
+
+    burst();
+
+});
+
+
+closeModal.addEventListener("click", () => {
+
+    modal.classList.remove("show");
+
+});
+
+
+document.querySelector(".modal-backdrop")
+.addEventListener("click", () => {
+
+    modal.classList.remove("show");
+
+});
+
+
+const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+        if(entry.isIntersecting){
+
+            entry.target.classList.add("visible");
+
+        }
+
+    });
+
+},{threshold:.12});
+
+
+document.querySelectorAll(".reveal")
+.forEach(element => observer.observe(element));
+
+
+function makeHeart(){
+
+    const heart = document.createElement("span");
+
+    heart.textContent =
+        Math.random() > .5 ? "♥" : "♡";
+
+    heart.style.left =
+        Math.random() * 100 + "vw";
+
+    heart.style.animationDuration =
+        (6 + Math.random() * 5) + "s";
+
+    heart.style.fontSize =
+        (10 + Math.random() * 14) + "px";
+
+    document
+        .querySelector(".floating-hearts")
+        .appendChild(heart);
+
+    setTimeout(() => {
+
+        heart.remove();
+
+    },11000);
+
+}
+
+
+setInterval(makeHeart,850);
+
+
+function burst(){
+
+    for(let i=0;i<30;i++){
+
+        setTimeout(() => {
+
+            const heart = document.createElement("span");
+
+            heart.textContent = "♥";
+
+            heart.style.position = "fixed";
+
+            heart.style.left =
+                (50 + (Math.random()-.5)*50) + "vw";
+
+            heart.style.top =
+                (50 + (Math.random()-.5)*35) + "vh";
+
+            heart.style.zIndex = "200";
+
+            heart.style.color =
+                "rgba(217,154,158,.9)";
+
+            heart.style.fontSize =
+                (14 + Math.random()*22) + "px";
+
+            heart.style.pointerEvents = "none";
+
+            document.body.appendChild(heart);
+
+            heart.animate(
+
+                [
+                    {
+                        transform:"translate(0,0) scale(1)",
+                        opacity:1
+                    },
+
+                    {
+                        transform:
+                        `translate(${(Math.random()-.5)*300}px,
+                        ${(Math.random()-.5)*300}px)
+                        scale(.2)`,
+                        opacity:0
+                    }
+
+                ],
+
+                {
+                    duration:1200,
+                    easing:"ease-out"
+                }
+
+            ).onfinish = () => heart.remove();
+
+        },i*25);
+
+    }
+
+}
+
+</script>
+
+</body>
+  </html>
